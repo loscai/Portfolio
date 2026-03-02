@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full-Stack Web Developer & Software Engineer. Applicazioni web moderne, backend robusti e interfacce responsive con HTML, CSS, JavaScript, TypeScript, PHP, Python e .NET.">
+    <meta property="og:title" content="Full-Stack Web Developer | Software Engineer">
+    <meta property="og:description" content="Dal desktop al cloud, dal C++ al web moderno. Soluzioni scalabili e architetture solide.">
+    <meta property="og:type" content="website">
+    <title>Full-Stack Web Developer | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">{</span> dev <span class="logo-bracket">}</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">Chi Sono</a></li>
+                <li><a href="#stack" class="nav-link" data-i18n="nav.stack">Tech Stack</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Progetti</a></li>
+                <li><a href="#contact" class="nav-link nav-link--cta" data-i18n="nav.contact">Collaboriamo</a></li>
+            </ul>
+            <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+                <span class="lang-flag" id="lang-flag">🇮🇹</span>
+                <span class="lang-code" id="lang-code">IT</span>
+            </button>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon" id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span data-i18n="hero.badge">Disponibile per nuovi progetti</span>
+            </div>
+            <h1 class="hero-title">
+                <span data-i18n="hero.title1">Trasformo idee complesse in</span>
+                <span class="gradient-text" data-i18n="hero.title2">software che funziona.</span>
+            </h1>
+            <div class="hero-subtitle">
+                <span class="typing-prefix">&gt;&nbsp;</span>
+                <span class="typing-text" id="typing-text"></span>
+                <span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-description" data-i18n="hero.description">
+                Full-Stack Web Developer &amp; Software Engineer. Progetto architetture backend robuste,
+                ottimizzo software desktop e costruisco interfacce web responsive che scalano con il tuo business.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <span data-i18n="hero.cta1">Scopri i miei lavori</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-outline" data-i18n="hero.cta2">Parliamone</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="5">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label" data-i18n="hero.stat1">Anni nel settore</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="20">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label" data-i18n="hero.stat2">Soluzioni rilasciate</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="99">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label" data-i18n="hero.stat3">Uptime medio</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <span class="code-title">developer.js</span>
+                </div>
+                <pre class="code-body"><code><span class="ck">const</span> <span class="ct">developer</span> = {
+    <span class="cf">role</span>: <span class="cs">"Full-Stack Web Dev"</span>,
+    <span class="cf">stack</span>: [<span class="cs">"JS"</span>, <span class="cs">"TS"</span>, <span class="cs">"PHP"</span>, <span class="cs">"Python"</span>, <span class="cs">"C++"</span>],
+    <span class="cf">available</span>: <span class="cn">true</span>,
+
+    <span class="cf">build</span>() {
+        <span class="ck">return</span> <span class="cs">"🚀 Shipping quality code."</span>;
+    }
+};</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag" data-i18n-html="tag.about">&lt;chi-sono /&gt;</span>
+                <h2 class="section-title">
+                    <span data-i18n="about.title1">Dalle fondamenta in C++ alle</span>
+                    <span class="gradient-text" data-i18n="about.title2">architetture web moderne</span>
+                </h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="about-lead" data-i18n-html="about.lead">
+                        Ho iniziato scrivendo codice dove la performance è non negoziabile: <strong>software aziendali interni in C++ e C#</strong>,
+                        soluzioni che gestiscono flussi di lavoro critici e devono funzionare senza compromessi.
+                    </p>
+                    <p data-i18n-html="about.p1">
+                        Oggi porto quella stessa mentalità nel mondo web. Con <strong>HTML, CSS, JavaScript, TypeScript, PHP, SQL e MongoDB</strong> costruisco
+                        applicazioni dinamiche e full-stack che uniscono la solidità del backend
+                        alla reattività di un'interfaccia moderna.
+                    </p>
+                    <p data-i18n-html="about.p2">
+                        Il risultato? Software che non è solo "funzionante", ma <strong>robusto, manutenibile e pronto a scalare</strong>.
+                        Che sia un tool interno per 50 utenti o una piattaforma web per migliaia, il mio obiettivo resta lo stesso:
+                        consegnare codice di cui andare fieri.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item glass-card">
+                            <div class="highlight-icon">🏗️</div>
+                            <div>
+                                <h4 data-i18n="about.h1">Architetture Solide</h4>
+                                <p data-i18n="about.h1desc">Backend progettati per durare e crescere con il business</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item glass-card">
+                            <div class="highlight-icon">⚡</div>
+                            <div>
+                                <h4 data-i18n="about.h2">Performance Obsessed</h4>
+                                <p data-i18n="about.h2desc">Ottimizzazione a ogni livello, dal database all'UI</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item glass-card">
+                            <div class="highlight-icon">🔄</div>
+                            <div>
+                                <h4 data-i18n="about.h3">Desktop → Web</h4>
+                                <p data-i18n="about.h3desc">Migrazione e modernizzazione di sistemi legacy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual reveal">
+                    <div class="terminal-window glass-card">
+                        <div class="terminal-header">
+                            <div class="code-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title" data-i18n="terminal.title">~/chi-sono</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-cmd">dev --info</span>
+                            </div>
+                            <div class="terminal-output">
+                                <span class="to-key">Focus</span>: Full-Stack Web Dev<br>
+                                <span class="to-key">Background</span>: C++/C# Enterprise<br>
+                                <span class="to-key">Approach</span>: Performance-first<br>
+                                <span class="to-key">Location</span>: Italia 🇮🇹<br>
+                                <span class="to-key">Mode</span>: <span class="to-val">Remote-ready</span><br>
+                                <span class="to-key">Status</span>: <span class="to-val available-tag">● Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="section stack" id="stack">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag" data-i18n-html="tag.stack">&lt;tech-stack /&gt;</span>
+                <h2 class="section-title">
+                    <span data-i18n="stack.title1">Gli strumenti con cui</span>
+                    <span class="gradient-text" data-i18n="stack.title2">costruisco soluzioni</span>
+                </h2>
+                <p class="section-subtitle" data-i18n="stack.subtitle">Un ecosistema completo, dal basso livello all'interfaccia utente.</p>
+            </div>
+            <div class="stack-grid">
+                <div class="stack-card reveal glass-card" data-tilt>
+                    <div class="stack-icon-wrap">
+                        <img class="stack-icon" src="images/python.png" alt="Python" loading="lazy">
+                    </div>
+                    <h3>Python</h3>
+                    <p data-i18n="stack.python">Scripting, automazione, data analysis e sviluppo backend con framework moderni.</p>
+                    <div class="stack-level">
+                        <div class="level-bar"><div class="level-fill" data-width="88"></div></div>
+                        <span>Advanced</span>
+                    </div>
+                </div>
+
+                <div class="stack-card reveal glass-card" data-tilt>
+                    <div class="stack-icon-wrap">
+                        <img class="stack-icon" src="images/cplusplus.png" alt="C++" loading="lazy">
+                    </div>
+                    <h3>C++</h3>
+                    <p data-i18n="stack.cpp">Fondamenta solide per software desktop ad alte prestazioni e tool critici.</p>
+                    <div class="stack-level">
+                        <div class="level-bar"><div class="level-fill" data-width="85"></div></div>
+                        <span>Advanced</span>
+                    </div>
+                </div>
+
+                <div class="stack-card reveal glass-card" data-tilt>
+                    <div class="stack-icon-wrap">
+                        <img class="stack-icon" src="images/dotnet.png" alt=".NET Core" loading="lazy">
+                    </div>
+                    <h3>.NET Core</h3>
+                    <p data-i18n="stack.dotnet">Framework di riferimento per API REST, microservizi e applicazioni cross-platform.</p>
+                    <div class="stack-level">
+                        <div class="level-bar"><div class="level-fill" data-width="93"></div></div>
+                        <span>Expert</span>
+                    </div>
+                </div>
+
+                <div class="stack-card reveal glass-card" data-tilt>
+                    <div class="stack-icon-wrap">
+                        <img class="stack-icon" src="images/html5.png" alt="HTML / CSS" loading="lazy">
+                    </div>
+                    <h3>HTML / CSS</h3>
+                    <p data-i18n="stack.html">Struttura semantica e design responsive. Animazioni CSS, Flexbox, Grid e glassmorphism.</p>
+                    <div class="stack-level">
+                        <div class="level-bar"><div class="level-fill" data-width="92"></div></div>
+                        <span>Expert</span>
+                    </div>
+                </div>
+
+                <div class="stack-card reveal glass-card" data-tilt>
+                    <div class="stack-icon-wrap">
+                        <img class="stack-icon" src="images/javascript.png" alt="JavaScript" loading="lazy">
+                    </div>
+                    <h3>JavaScript / TypeScript</h3>
+                    <p data-i18n="stack.js">Logica frontend e backend. ES6+, DOM API, async/await e tipizzazione forte con TS.</p>
+                    <div class="stack-level">
+                        <div class="level-bar"><div class="level-fill" data-width="90"></div></div>
+                        <span>Expert</span>
+                    </div>
+                </div>
+
+                <div class="stack-card reveal glass-card" data-tilt>
+                    <div class="stack-icon-wrap">
+                        <img class="stack-icon" src="images/php.png" alt="PHP / MySQL" loading="lazy">
+                    </div>
+                    <h3>PHP / MySQL</h3>
+                    <p data-i18n="stack.php">Backend server-side, query SQL, gestione database relazionali e API RESTful.</p>
+                    <div class="stack-level">
+                        <div class="level-bar"><div class="level-fill" data-width="85"></div></div>
+                        <span>Advanced</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stack-extras reveal">
+                <h3 class="extras-title" data-i18n="stack.extras">Anche nel mio toolkit</h3>
+                <div class="extras-tags">
+                    <span class="extra-tag">MongoDB</span>
+                    <span class="extra-tag">SQL Server</span>
+                    <span class="extra-tag">REST API</span>
+                    <span class="extra-tag">Node.js</span>
+                    <span class="extra-tag">Git</span>
+                    <span class="extra-tag">Docker</span>
+                    <span class="extra-tag">.NET Core</span>
+                    <span class="extra-tag">React</span>
+                    <span class="extra-tag">Responsive Design</span>
+                    <span class="extra-tag">SEO</span>
+                    <span class="extra-tag">CI/CD</span>
+                    <span class="extra-tag">Clean Architecture</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag" data-i18n-html="tag.projects">&lt;progetti /&gt;</span>
+                <h2 class="section-title">
+                    <span data-i18n="projects.title1">Soluzioni reali,</span>
+                    <span class="gradient-text" data-i18n="projects.title2">risultati misurabili</span>
+                </h2>
+            </div>
+            <div class="projects-grid reveal">
+                <div class="project-card glass-card">
+                    <div class="project-image">
+                        <div class="project-placeholder"><span>📦</span></div>
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <span class="project-type">Full-Stack</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title" data-i18n="projects.inv.title">Gestione Inventario</h3>
+                        <p class="project-desc" data-i18n="projects.inv.desc">
+                            Sistema completo per la gestione dell'inventario aziendale. Tracciamento prodotti,
+                            movimentazioni di magazzino e reportistica integrata per ottimizzare i flussi logistici.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">Full-Stack</span>
+                            <span class="tag">Database</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/loscai/Progetto-gestione-inventario" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-image">
+                        <div class="project-placeholder"><span>🏆</span></div>
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <span class="project-type">C# .NET</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title" data-i18n="projects.tourn.title">Realizzatore di Tornei</h3>
+                        <p class="project-desc" data-i18n="projects.tourn.desc">
+                            Applicazione desktop in C# per la creazione e gestione di tornei.
+                            Generazione automatica di bracket, gestione partecipanti e tracciamento risultati in tempo reale.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">.NET</span>
+                            <span class="tag">Desktop</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/loscai/realizzatore-di-tornei" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-image">
+                        <div class="project-placeholder"><span>📈</span></div>
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <span class="project-type">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Market Tracker</h3>
+                        <p class="project-desc" data-i18n="projects.market.desc">
+                            Tool per il tracciamento e l'analisi di dati di mercato.
+                            Raccolta automatizzata, elaborazione e visualizzazione di trend per supportare decisioni data-driven.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/loscai/MARKET-TRACKER" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag" data-i18n-html="tag.contact">&lt;contatti /&gt;</span>
+                <h2 class="section-title">
+                    <span data-i18n="contact.title1">Hai un progetto in mente?</span>
+                    <span class="gradient-text" data-i18n="contact.title2">Costruiamolo insieme.</span>
+                </h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">
+                    Cerchi uno sviluppatore web affidabile per una collaborazione a lungo termine o un progetto specifico?
+                    Scrivimi — rispondo entro 24 ore.
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="christiancolombo2k5@gmail.com">christiancolombo2k5@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <h4 data-i18n="contact.mode">Modalità</h4>
+                            <p data-i18n="contact.modeDesc">Full-remote · Freelance · Contratto</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon">⏱️</div>
+                        <div>
+                            <h4 data-i18n="contact.response">Risposta</h4>
+                            <p data-i18n="contact.responseDesc">Entro 24 ore lavorative</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/loscai" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/christian-colombo-783b6a262/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form glass-card" id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" data-i18n="form.name">Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Il tuo nome" data-i18n-placeholder="form.namePh" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="form.email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="la-tua@email.com" data-i18n-placeholder="form.emailPh" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-i18n="form.subject">Di cosa hai bisogno?</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected data-i18n="form.selectDefault">Seleziona un'opzione</option>
+                            <option value="webapp" data-i18n="form.optWebapp">Applicazione Web</option>
+                            <option value="desktop" data-i18n="form.optDesktop">Software Desktop</option>
+                            <option value="api" data-i18n="form.optApi">API / Backend</option>
+                            <option value="migration" data-i18n="form.optMigration">Migrazione Legacy</option>
+                            <option value="consulting" data-i18n="form.optConsulting">Consulenza Tecnica</option>
+                            <option value="other" data-i18n="form.optOther">Altro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="form.message">Raccontami del tuo progetto</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Budget indicativo, tempistiche, dettagli tecnici..." data-i18n-placeholder="form.messagePh" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span data-i18n="form.submit">Iniziamo a collaborare</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#hero" class="footer-logo">
+                    <span class="logo-bracket">{</span> dev <span class="logo-bracket">}</span>
+                </a>
+                <p class="footer-text" data-i18n-html="footer.text">Progettato, sviluppato e deployato con <span class="heart">♥</span> e tanto codice</p>
+                <p class="footer-copyright">&copy; 2026 · Full-Stack Web Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
