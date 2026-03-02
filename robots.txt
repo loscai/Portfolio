@@ -1,0 +1,6 @@
+# robots.txt - Christian Colombo Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://christiancolombo.dev/sitemap.xml
