@@ -290,6 +290,14 @@ a {
 }
 .btn-full { width: 100%; justify-content: center; }
 
+.spin {
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 /* ===== GRADIENT TEXT ===== */
 .gradient-text {
     background: linear-gradient(135deg, var(--accent-start), var(--accent-mid), var(--accent-end));

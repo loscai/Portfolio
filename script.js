@@ -521,23 +521,66 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== CONTACT FORM =====
+// ===== CONTACT FORM (EmailJS) =====
 (function initForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    // ⚠️ CONFIGURA QUI I TUOI DATI EMAILJS ⚠️
+    const EMAILJS_PUBLIC_KEY = 'YROtHd2k8uJH8fbal';      // La tua Public Key da EmailJS
+    const EMAILJS_SERVICE_ID = 'service_vq637io';      // Il Service ID (es. 'service_gmail')
+    const EMAILJS_TEMPLATE_ID = 'template_wdxv4lh';    // Il Template ID (es. 'template_contact')
+
+    // Inizializza EmailJS
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const btn = form.querySelector('button[type="submit"]');
-        const original = btn.innerHTML;
+        const originalHTML = btn.innerHTML;
         const lang = localStorage.getItem('site-lang') || 'it';
-        const sentText = lang === 'en' ? '✓ Message sent!' : '✓ Messaggio inviato!';
-        btn.innerHTML = `<span>${sentText}</span>`;
-        btn.style.background = 'linear-gradient(135deg, #34d399, #059669)';
-        setTimeout(() => {
-            btn.innerHTML = original;
-            btn.style.background = '';
+
+        // Stato di caricamento
+        btn.disabled = true;
+        btn.innerHTML = `<span>${lang === 'en' ? 'Sending...' : 'Invio in corso...'}</span>
+            <svg class="spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>`;
+
+        // Parametri del template EmailJS
+        const templateParams = {
+            name: form.querySelector('#name').value,
+            email: form.querySelector('#email').value,
+            subject: form.querySelector('#subject').value,
+            message: form.querySelector('#message').value,
+        };
+
+        try {
+            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+
+            // Successo
+            const sentText = lang === 'en' ? '✓ Message sent!' : '✓ Messaggio inviato!';
+            btn.innerHTML = `<span>${sentText}</span>`;
+            btn.style.background = 'linear-gradient(135deg, #34d399, #059669)';
             form.reset();
-        }, 3000);
+
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3000);
+        } catch (error) {
+            // Errore
+            console.error('EmailJS error:', error);
+            const errorText = lang === 'en' ? '✗ Failed to send. Try again.' : '✗ Invio fallito. Riprova.';
+            btn.innerHTML = `<span>${errorText}</span>`;
+            btn.style.background = 'linear-gradient(135deg, #f87171, #dc2626)';
+
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3000);
+        }
     });
 })();
